@@ -18,6 +18,22 @@
 	git reset HEAD README.md (unstage files by file names)
 	git reset is specifically about updating the index, moving the HEAD.
  
+	Eg. what git reset --hard and then subsequent push does to the commits which were locally reset
+	git reflog  (Lets say we had these commits)
+	014df6a (HEAD -> master) HEAD@{0}: commit: Local commit #5
+	6237772 HEAD@{1}: commit: Local commit #4
+	593794d HEAD@{2}: commit: Local commit #3
+	b1a6865 HEAD@{3}: commit: Local commit #2
+	8a3358e HEAD@{4}: commit: Local commit #1
+ 
+	git reset --hard 593794d	(Now we reset to local commit #3)
+	
+	head will reset to local commit #3 but commits 4 and 5 still remain in the local history.
+	
+	But if we push these changes after git reset --hard , only commits till #3 will be shown on the server. local commits 4 & 5 will be lost and not shown in the history.
+	
+	git reset vs git revert : With git revert reverted commits are retained in the history and a new commit that reverts the older commit is created while with get reset the commits after the commit we reverted to will not be shown in the history on the server.
+	
 - Checking pending changes
 	git status
 
@@ -64,3 +80,4 @@ Commands to update the server branch
 	git push origin develop (will sync develop branch on origin with local commits)
 	git push origin master (will sync master branch on origin with local commits)
 
+-
