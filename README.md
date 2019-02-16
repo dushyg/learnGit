@@ -52,3 +52,6 @@ If there are multiple changes to a single file in all the commits, then a merge 
 
 - show history of all actions
 git reflog
+
+- updating server branch with local commits
+git push origin develop (will sync develop branch on origin with local commits)
