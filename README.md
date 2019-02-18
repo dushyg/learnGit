@@ -80,4 +80,4 @@ Commands to update the server branch
 	git push origin develop (will sync develop branch on origin with local commits)
 	git push origin master (will sync master branch on origin with local commits)
 
--
+-Adding test changes. These are incorrect and will be edited in subsequent commit.
